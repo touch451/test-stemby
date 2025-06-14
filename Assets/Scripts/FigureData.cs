@@ -1,23 +1,26 @@
-public enum Shape { Circle, Square, Triangle }
-public enum FrameColor { Red, Blue, Green }
-public enum Fruit { Cat, Dog, Fox }
+using System;
+using Types;
 
-[System.Serializable]
-public class FigureData
+namespace Scripts
 {
-    public Shape shape;
-    public FrameColor frameColor;
-    public Fruit fruit;
-
-    public override bool Equals(object obj)
+    [Serializable]
+    public class FigureData
     {
-        if (obj is FigureData other)
-            return shape == other.shape && frameColor == other.frameColor && fruit == other.fruit;
-        return false;
-    }
+        public FormType form;
+        public FrameType frame;
+        public FruitType fruit;
 
-    public override int GetHashCode()
-    {
-        return shape.GetHashCode() ^ frameColor.GetHashCode() ^ fruit.GetHashCode();
+        public override bool Equals(object obj)
+        {
+            if (obj is FigureData other)
+                return form == other.form && frame == other.frame && fruit == other.fruit;
+
+            return false;
+        }
+
+        public override int GetHashCode()
+        {
+            return form.GetHashCode() ^ frame.GetHashCode() ^ fruit.GetHashCode();
+        }
     }
 }

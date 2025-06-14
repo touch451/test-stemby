@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 23c39604c54f9f944ac7791b186f3dce
+guid: 575a4d815a8fb4ea1ba94c5e4e34964c
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -48,12 +48,12 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 200
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
-  spriteGenerateFallbackPhysicsShape: 0
+  spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
-  spriteTessellationDetail: -1
+  spriteTessellationDetail: 1
   textureType: 8
   textureShape: 1
   singleChannelComponent: 0
@@ -65,7 +65,7 @@ TextureImporter:
   ignorePngGamma: 0
   applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -94,32 +94,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
-    buildTarget: Server
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 3
     buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -135,11 +109,109 @@ TextureImporter:
   spriteSheet:
     serializedVersion: 2
     sprites: []
-    outline: []
-    physicsShape: []
+    outline:
+    - - {x: 48, y: -20}
+      - {x: 48, y: -17}
+      - {x: 45, y: -13}
+      - {x: 44, y: -13}
+      - {x: 42, y: -10}
+      - {x: 40, y: -4}
+      - {x: 38, y: -3}
+      - {x: 38, y: 2}
+      - {x: 31, y: 10}
+      - {x: 30, y: 11}
+      - {x: 30, y: 14}
+      - {x: 29, y: 16}
+      - {x: 27, y: 17}
+      - {x: 22, y: 27}
+      - {x: 20, y: 29}
+      - {x: 19, y: 32}
+      - {x: 17, y: 34}
+      - {x: 16, y: 37}
+      - {x: 14, y: 39}
+      - {x: 12, y: 44}
+      - {x: 10, y: 46}
+      - {x: -9, y: 46}
+      - {x: -12, y: 44}
+      - {x: -14, y: 39}
+      - {x: -16, y: 37}
+      - {x: -17, y: 34}
+      - {x: -19, y: 32}
+      - {x: -20, y: 29}
+      - {x: -22, y: 27}
+      - {x: -24, y: 22}
+      - {x: -26, y: 20}
+      - {x: -27, y: 17}
+      - {x: -29, y: 15}
+      - {x: -31, y: 10}
+      - {x: -33, y: 8}
+      - {x: -35, y: 7}
+      - {x: -36, y: 4}
+      - {x: -36, y: 1}
+      - {x: -39, y: -4}
+      - {x: -42, y: -8}
+      - {x: -42, y: -10}
+      - {x: -45, y: -13}
+      - {x: -47, y: -14}
+      - {x: -48, y: -17}
+      - {x: -48, y: -20}
+      - {x: -50, y: -21}
+      - {x: -52, y: -26}
+      - {x: -52, y: -42}
+      - {x: -48, y: -46}
+      - {x: 48, y: -46}
+      - {x: 52, y: -42}
+      - {x: 52, y: -26}
+      - {x: 51, y: -23}
+    physicsShape:
+    - - {x: 52, y: -27}
+      - {x: 50, y: -25}
+      - {x: 49, y: -21}
+      - {x: 47, y: -19}
+      - {x: 45, y: -14}
+      - {x: 43, y: -12}
+      - {x: 39, y: -4}
+      - {x: 37, y: -2}
+      - {x: 32, y: 8}
+      - {x: 30, y: 10}
+      - {x: 28, y: 15}
+      - {x: 26, y: 17}
+      - {x: 25, y: 20}
+      - {x: 23, y: 22}
+      - {x: 21, y: 27}
+      - {x: 19, y: 29}
+      - {x: 14, y: 39}
+      - {x: 12, y: 41}
+      - {x: 8, y: 46}
+      - {x: -8, y: 46}
+      - {x: -12, y: 42}
+      - {x: -16, y: 34}
+      - {x: -18, y: 32}
+      - {x: -19, y: 29}
+      - {x: -21, y: 27}
+      - {x: -23, y: 22}
+      - {x: -25, y: 20}
+      - {x: -26, y: 17}
+      - {x: -28, y: 15}
+      - {x: -29, y: 12}
+      - {x: -31, y: 10}
+      - {x: -33, y: 5}
+      - {x: -35, y: 3}
+      - {x: -36, y: 0}
+      - {x: -38, y: -2}
+      - {x: -44, y: -14}
+      - {x: -46, y: -16}
+      - {x: -47, y: -19}
+      - {x: -49, y: -21}
+      - {x: -50, y: -24}
+      - {x: -52, y: -26}
+      - {x: -52, y: -42}
+      - {x: -48, y: -46}
+      - {x: 48, y: -46}
+      - {x: 52, y: -42}
     bones: []
     spriteID: 5e97eb03825dee720800000000000000
-    internalID: 0
+    internalID: 1537655665
     vertices: []
     indices: 
     edges: []
