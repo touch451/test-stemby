@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Figure
+  - 
   - 
   - 
   - 
@@ -41,6 +41,18 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Figure
+  - name: BackUI
+    uniqueID: 3350261615
+    locked: 0
+  - name: Board
+    uniqueID: 805133537
+    locked: 0
+  - name: Figure-Board
     uniqueID: 3836969111
+    locked: 0
+  - name: FronUI
+    uniqueID: 970718999
+    locked: 0
+  - name: Figure-ActionBar
+    uniqueID: 2535372197
     locked: 0

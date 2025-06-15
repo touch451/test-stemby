@@ -1,0 +1,60 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bbb281ee3bf0b054c82ac2347e9e782c, type: 3}
+  m_Name: Local-Fruits
+  m_EditorClassIdentifier: 
+  m_GroupName: Local-Fruits
+  m_Data:
+    m_SerializedData: []
+  m_GUID: 3f44efda369dd421b942c08047830f71
+  m_SerializeEntries:
+  - m_GUID: 140169fe467b8b649aa2541e0c8d6c09
+    m_Address: Fruits/Strawberry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 23c39604c54f9f944ac7791b186f3dce
+    m_Address: Fruits/Blueberry
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 50dd2e8acaa7426438d693e39eb73026
+    m_Address: Fruits/Pear
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5b0c287fddf11b24d910a6b285ee1807
+    m_Address: Fruits/Orange
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a292bddf8693e00428dace4a7f770aa6
+    m_Address: Fruits/Banana
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b7481a4c424715542a70ac1efc7468db
+    m_Address: Fruits/Apple
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: fbb6c45b2e0f5424cace793121f03e56
+    m_Address: Fruits/Grape
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  m_ReadOnly: 0
+  m_Settings: {fileID: 11400000, guid: eb29e924f43604d268b8cf653aecce19, type: 2}
+  m_SchemaSet:
+    m_Schemas:
+    - {fileID: 11400000, guid: 6f1e98bbe00e848cc8c1d2a951ee6bef, type: 2}
+    - {fileID: 11400000, guid: a6d917a54e9824141a448f12adca629f, type: 2}
