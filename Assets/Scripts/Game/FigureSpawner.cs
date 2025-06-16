@@ -9,11 +9,11 @@ namespace Scripts
 {
     public class FigureSpawner : MonoBehaviour
     {
-        [SerializeField] private Transform spawnPoint;
-        [SerializeField] private Transform figuresContainer;
+        [SerializeField] private float spawnDelay;
 
         [Space]
-        [SerializeField] private float spawnDelay;
+        [SerializeField] private Transform spawnPoint;
+        [SerializeField] private Transform figuresContainer;
 
         [Header("Figure Prefabs:")]
         [SerializeField] private Figure squareFigurePrefab;

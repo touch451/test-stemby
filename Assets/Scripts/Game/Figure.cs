@@ -4,6 +4,7 @@ using UnityEngine.Events;
 using UnityEngine.EventSystems;
 using UnityEngine.ResourceManagement.AsyncOperations;
 using DG.Tweening;
+using System;
 
 namespace Scripts
 {
@@ -15,13 +16,13 @@ namespace Scripts
         [SerializeField] private SpriteRenderer frameSr;
         [SerializeField] private SpriteRenderer fruitSr;
 
-        private FigureData _data = null;
-        private AsyncOperationHandle<Sprite> _fruitSprateHandle;
+        private AsyncOperationHandle<Sprite> _fruitSprateHandle = new AsyncOperationHandle<Sprite>();
 
         private UnityEvent<Figure> onFigureClick = new UnityEvent<Figure>();
         private UnityEvent<Figure> onFigureComplete = new UnityEvent<Figure>();
 
-        private bool inCell = false;
+        private bool inActionBar = false;
+        public FigureData data { get; private set; } = null;
 
         private void Start()
         {
@@ -29,45 +30,59 @@ namespace Scripts
             SetFrameColor();
         }
 
+        public void Init(FigureData data, UnityAction<Figure> onClick, UnityAction<Figure> onComplete)
+        {
+            this.data = data;
+            onFigureClick.AddListener(onClick);
+            onFigureComplete.AddListener(onComplete);
+        }
+
         public void OnPointerClick(PointerEventData eventData)
         {
-            if (inCell)
+            if (inActionBar)
                 return;
 
             onFigureClick?.Invoke(this);
         }
 
-        public void Init(FigureData data, UnityAction<Figure> onClick, UnityAction<Figure> onComplete)
+        public void MoveToActionBar(ActionBarCell targetCell, float duration)
         {
-            _data = data;
-            onFigureClick.AddListener(onClick);
-        }
-
-        public void MoveToActionBarCell(ActionBarCell targetCell)
-        {
-            if (inCell)
+            if (inActionBar)
                 return;
 
-            inCell = true;
+            inActionBar = true;
             rigidbody2d.simulated = false;
 
             frameSr.sortingLayerName = "Figure-ActionBar";
             fruitSr.sortingLayerName = "Figure-ActionBar";
             formSr.sortingLayerName = "Figure-ActionBar";
             
-            transform.DOKill();
-            transform.DOMove(targetCell.transform.position, 0.5f).SetEase(Ease.InOutCubic);
-            transform.DORotateQuaternion(Quaternion.identity, 0.5f);
+            transform.DORotateQuaternion(Quaternion.identity, duration);
+
+            transform
+                .DOMove(targetCell.transform.position, duration)
+                .SetEase(Ease.InOutCubic);
         }
 
-        public void Complete()
+        public void CompleteFigure(float delay = 0f)
         {
-            onFigureComplete?.Invoke(this);
+            DoScaleFigure(delay, () => onFigureComplete?.Invoke(this));
+        }
+
+        public void DoScaleFigure(float delay, Action onComplete = null)
+        {
+            rigidbody2d.simulated = false;
+            rigidbody2d.bodyType = RigidbodyType2D.Static;
+
+            transform
+                .DOScale(1.15f, 0.25f)
+                .SetDelay(delay)
+                .OnComplete(() => onComplete?.Invoke());
         }
 
         private void LoadFruitSprite()
         {
-            string key = "Fruits/" + _data.fruit.ToString();
+            string key = "Fruits/" + data.fruit.ToString();
 
             StartCoroutine(AddressablesUtils.LoadAsset_Co<Sprite>(key, OnLoaded));
 
@@ -80,12 +95,22 @@ namespace Scripts
 
         private void SetFrameColor()
         {
-            frameSr.color = ScriptUtils.ConvertColorTypeToColor32(_data.color);
+            frameSr.color = ScriptUtils.ConvertColorTypeToColor32(data.color);
+        }
+
+        public bool IsEqualFigure(Figure figure)
+        {
+            return
+                data.form == figure.data.form &&
+                data.fruit == figure.data.fruit &&
+                data.color == figure.data.color;
         }
 
         private void OnDestroy()
         {
             AddressablesUtils.ReleaseAsset(_fruitSprateHandle);
+            onFigureClick.RemoveAllListeners();
+            onFigureComplete.RemoveAllListeners();
         }
     }
 }

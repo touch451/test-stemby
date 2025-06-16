@@ -56,3 +56,6 @@ TagManager:
   - name: Figure-ActionBar
     uniqueID: 2535372197
     locked: 0
+  - name: Splash
+    uniqueID: 3372281175
+    locked: 0
