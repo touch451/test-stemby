@@ -21,7 +21,7 @@ namespace Scripts
         {
             Bounds bounds = ScriptUtils.GetCameraWorldBounds(Camera.main);
 
-            spawnPoint.position = new Vector3(0, bounds.max.y + 2f, 0);
+            spawnPoint.position = new Vector3(0, bounds.max.y, 0);
 
             leftBorder.SetSizeAndPosition(
                 size: new Vector2(leftBorderSize, bounds.size.y),

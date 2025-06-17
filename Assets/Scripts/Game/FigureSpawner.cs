@@ -20,12 +20,15 @@ namespace Scripts
         [SerializeField] private Figure triangleFigurePrefab;
         [SerializeField] private Figure circleFigurePrefab;
 
-        float spawnPosX;
-        float spawnStepX = 1f;
+        private float spawnPosX;
+        private float spawnStepX = 1f;
+
+        public bool isSpawningProcess { get; private set; } = false; 
 
         public List<Figure> SpawnFigures(List<FigureData> figureDatas,
             UnityAction<Figure> onFigureClick, UnityAction<Figure> onFigureComplete)
         {
+            isSpawningProcess = true;
             spawnPosX = -1f;
 
             List<Figure> figures = new List<Figure>();
@@ -82,6 +85,8 @@ namespace Scripts
                 figure.gameObject.SetActive(true);
                 yield return new WaitForSeconds(spawnDelay);
             }
+
+            isSpawningProcess = false;
         }
     }
 }
